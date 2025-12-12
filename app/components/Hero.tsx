@@ -12,9 +12,9 @@ const titles = {
 };
 
 const subtitles = {
-  es: "Compress embeddings up to 6× while preserving semantic structure.Directional-preserving. Symbolic. Multimodal.",
-  en: "Compress embeddings up to 6× while preserving semantic structure.Directional-preserving. Symbolic. Multimodal.",
-  pt: "Compress embeddings up to 6× while preserving semantic structure.Directional-preserving. Symbolic. Multimodal.",
+  es: "Compress embeddings up to 6× while preserving semantic structure. Directional-preserving. Symbolic. Multimodal.",
+  en: "Compress embeddings up to 6× while preserving semantic structure. Directional-preserving. Symbolic. Multimodal.",
+  pt: "Compress embeddings up to 6× while preserving semantic structure. Directional-preserving. Symbolic. Multimodal.",
 };
 
 export default function Hero() {
