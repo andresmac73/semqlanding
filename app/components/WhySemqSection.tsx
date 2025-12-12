@@ -88,11 +88,11 @@ function CostGauge({ percentage, note }: { percentage: number; note: string }) {
   );
 }
 
-function EmbeddingAnimation() {
+function EmbeddingAnimation({ className }: { className?: string }) {
   const [applySemq, setApplySemq] = useState(false);
 
   return (
-    <div className="bg-white/90 backdrop-blur-sm border border-gray-100 shadow-xl rounded-2xl p-6 space-y-4">
+    <div className={`space-y-4 ${className ?? ""}`}>
       <div className="flex items-center justify-between">
         <div>
           <p className="text-sm text-gray-600">
@@ -179,8 +179,8 @@ export default function WhySemqSection() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
-          <div className="space-y-6">
-            <div className="bg-white/90 backdrop-blur-sm border border-gray-100 shadow-xl rounded-2xl p-6 space-y-6">
+          <div className="h-full">
+            <div className="bg-white/90 backdrop-blur-sm border border-gray-100 shadow-xl rounded-2xl p-6 space-y-6 h-full flex flex-col">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-sm text-gray-600">Embedding size</p>
@@ -212,13 +212,46 @@ export default function WhySemqSection() {
                   </p>
                 </div>
               </div>
-            </div>
 
-            <CostGauge percentage={selectedOption.costPercentage} note={costNote} />
+              <CostGauge
+                percentage={selectedOption.costPercentage}
+                note={costNote}
+              />
+            </div>
           </div>
 
-          <div className="space-y-6">
-            <EmbeddingAnimation />
+          <div className="h-full">
+            <div className="bg-white/90 backdrop-blur-sm border border-gray-100 shadow-xl rounded-2xl p-6 space-y-6 h-full flex flex-col">
+              <EmbeddingAnimation className="flex-1" />
+              <div className="space-y-2 text-sm text-gray-600 leading-6">
+                <p className="text-gray-700 font-medium">
+                  Why it matters
+                </p>
+                <p>
+                  Dense FP32 vectors balloon storage and query costs. SEMQ keeps
+                  the semantic meaning while shrinking payloads so indexes stay
+                  light and queries fly.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-gray-600">
+                  <div className="flex items-center gap-2">
+                    <span className="h-2 w-2 rounded-full bg-[#365aa6]" />
+                    <span>Less I/O per lookup</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="h-2 w-2 rounded-full bg-[#365aa6]" />
+                    <span>Smaller indexes & RAM</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="h-2 w-2 rounded-full bg-[#365aa6]" />
+                    <span>Cheaper scaling</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="h-2 w-2 rounded-full bg-[#365aa6]" />
+                    <span>Directional semantics preserved</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
