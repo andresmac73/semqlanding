@@ -3,9 +3,6 @@ import Hero from "./components/Hero";
 import WhySemqSection from "./components/WhySemqSection";
 import { VectorTransform3D } from "@/components/visuals";
 import {
-  EncodingDemo,
-  RehydrationPreview,
-  DeveloperPlayground,
   ComparisonTable,
   NewDomainNarrative,
 } from "@/components/semq";
@@ -71,9 +68,6 @@ export default function Home() {
           </p>
         </div>
       </section>
-      <EncodingDemo />
-      <RehydrationPreview />
-      <DeveloperPlayground />
       <ComparisonTable />
       <NewDomainNarrative />
       <Footer />

@@ -7,32 +7,8 @@ import { useLanguage, Language } from "../context/LanguageProvider";
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [aboutMenuOpen, setAboutMenuOpen] = useState(false);
+  const [devMenuOpen, setDevMenuOpen] = useState(false);
   const { lang, setLang } = useLanguage();
-
-  const t = {
-    es: {
-      about: "About",
-      section1: "Nuestra Historia",
-      section2: "Equipo",
-      section3: "Misión",
-      section4: "Valores",
-    },
-    en: {
-      about: "About",
-      section1: "Our Story",
-      section2: "Team",
-      section3: "Mission",
-      section4: "Values",
-    },
-    pt: {
-      about: "Sobre",
-      section1: "Nossa História",
-      section2: "Equipe",
-      section3: "Missão",
-      section4: "Valores",
-    },
-  };
 
   const flagMap: Record<Language, string> = {
     es: "🇦🇷",
@@ -77,18 +53,37 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Menu Items - Desktop - About hacia la derecha */}
-        <div className="hidden md:flex items-center space-x-8 flex-1 justify-end font-semibold text-base">
+        {/* Menu Items - Desktop */}
+        <div className="hidden md:flex items-center space-x-3 flex-1 justify-end font-semibold text-base">
+          <Link
+            href="#why-semq"
+            className="px-3 py-2 rounded-full hover:text-[#2a4785] hover:bg-[#edf2ff] hover:ring-1 hover:ring-[#c7d5ff] transition-colors"
+          >
+            The Problem
+          </Link>
+          <Link
+            href="#what-semq-does"
+            className="px-3 py-2 rounded-full hover:text-[#2a4785] hover:bg-[#edf2ff] hover:ring-1 hover:ring-[#c7d5ff] transition-colors"
+          >
+            What SEMQ Does
+          </Link>
+          <Link
+            href="#semq-vs-everyone"
+            className="px-3 py-2 rounded-full hover:text-[#2a4785] hover:bg-[#edf2ff] hover:ring-1 hover:ring-[#c7d5ff] transition-colors"
+          >
+            Benchmarking
+          </Link>
+
           <div className="relative">
             <button
-              onClick={() => setAboutMenuOpen(!aboutMenuOpen)}
-              onBlur={() => setTimeout(() => setAboutMenuOpen(false), 200)}
-              className="flex items-center gap-1 cursor-pointer transition-colors duration-300 hover:text-[#2a4785]"
+              onClick={() => setDevMenuOpen(!devMenuOpen)}
+              onBlur={() => setTimeout(() => setDevMenuOpen(false), 200)}
+              className="px-3 py-2 rounded-full flex items-center gap-1 hover:text-[#2a4785] hover:bg-[#edf2ff] hover:ring-1 hover:ring-[#c7d5ff] transition-colors"
             >
-              {t[lang].about}
+              Developers
               <svg
                 className={`w-4 h-4 transition-transform duration-200 ${
-                  aboutMenuOpen ? "rotate-180" : ""
+                  devMenuOpen ? "rotate-180" : ""
                 }`}
                 fill="none"
                 stroke="currentColor"
@@ -102,42 +97,33 @@ export default function Navbar() {
                 />
               </svg>
             </button>
-            {aboutMenuOpen && (
-              <ul className="absolute top-full right-0 mt-2 w-48 bg-white text-[#365aa6] rounded-lg shadow-lg border border-border z-50">
+            {devMenuOpen && (
+              <ul className="absolute top-full right-0 mt-2 w-56 bg-white text-[#365aa6] rounded-lg shadow-lg border border-border z-50">
                 <li>
                   <Link
-                    href="#section1"
+                    href="/encoding-demo"
                     className="block px-4 py-2 hover:bg-[#365aa6] hover:text-white cursor-pointer rounded-t-lg transition"
-                    onClick={() => setAboutMenuOpen(false)}
+                    onClick={() => setDevMenuOpen(false)}
                   >
-                    {t[lang].section1}
+                    Encoding Demo
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="#section2"
+                    href="/rehydration-demo"
                     className="block px-4 py-2 hover:bg-[#365aa6] hover:text-white cursor-pointer transition"
-                    onClick={() => setAboutMenuOpen(false)}
+                    onClick={() => setDevMenuOpen(false)}
                   >
-                    {t[lang].section2}
+                    Rehydration Demo
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="#section3"
-                    className="block px-4 py-2 hover:bg-[#365aa6] hover:text-white cursor-pointer transition"
-                    onClick={() => setAboutMenuOpen(false)}
-                  >
-                    {t[lang].section3}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#section4"
+                    href="/developer-playground"
                     className="block px-4 py-2 hover:bg-[#365aa6] hover:text-white cursor-pointer rounded-b-lg transition"
-                    onClick={() => setAboutMenuOpen(false)}
+                    onClick={() => setDevMenuOpen(false)}
                   >
-                    {t[lang].section4}
+                    Developer Playground
                   </Link>
                 </li>
               </ul>
@@ -199,7 +185,7 @@ export default function Navbar() {
           <button
             onClick={toggleMenu}
             aria-label="Menu"
-            className="p-2 hover:bg-gray-100 rounded transition"
+            className="p-2 hover:text-[#2a4785] transition"
           >
             {menuOpen ? (
               <svg
@@ -239,15 +225,42 @@ export default function Navbar() {
         <div className="md:hidden bg-white text-[#365aa6] border-t border-border">
           <ul className="space-y-4 py-4">
             <li>
+              <Link
+                href="#why-semq"
+                className="block w-full text-center hover:text-[#2a4785] hover:bg-[#edf2ff] hover:ring-1 hover:ring-[#c7d5ff] cursor-pointer transition-colors duration-300 py-2 rounded-full"
+                onClick={toggleMenu}
+              >
+                The Problem
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="#what-semq-does"
+                className="block w-full text-center hover:text-[#2a4785] hover:bg-[#edf2ff] hover:ring-1 hover:ring-[#c7d5ff] cursor-pointer transition-colors duration-300 py-2 rounded-full"
+                onClick={toggleMenu}
+              >
+                What SEMQ Does
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="#semq-vs-everyone"
+                className="block w-full text-center hover:text-[#2a4785] hover:bg-[#edf2ff] hover:ring-1 hover:ring-[#c7d5ff] cursor-pointer transition-colors duration-300 py-2 rounded-full"
+                onClick={toggleMenu}
+              >
+                Benchmarking
+              </Link>
+            </li>
+            <li>
               <button
-                onClick={() => setAboutMenuOpen(!aboutMenuOpen)}
-                className="block w-full text-center hover:text-[#2a4785] cursor-pointer transition-colors duration-300 py-2"
+                onClick={() => setDevMenuOpen(!devMenuOpen)}
+                className="block w-full text-center hover:text-[#2a4785] hover:bg-[#edf2ff] hover:ring-1 hover:ring-[#c7d5ff] cursor-pointer transition-colors duration-300 py-2 rounded-full"
               >
                 <span className="flex items-center justify-center gap-2">
-                  {t[lang].about}
+                  Developers
                   <svg
                     className={`w-4 h-4 transition-transform duration-200 ${
-                      aboutMenuOpen ? "rotate-180" : ""
+                      devMenuOpen ? "rotate-180" : ""
                     }`}
                     fill="none"
                     stroke="currentColor"
@@ -262,42 +275,33 @@ export default function Navbar() {
                   </svg>
                 </span>
               </button>
-              {aboutMenuOpen && (
+              {devMenuOpen && (
                 <ul className="mt-2 space-y-2">
                   <li>
                     <Link
-                      href="#section1"
-                      className="block text-center hover:text-[#2a4785] cursor-pointer transition-colors duration-300 py-2"
+                      href="/encoding-demo"
+                      className="block text-center hover:text-[#2a4785] hover:bg-[#edf2ff] hover:ring-1 hover:ring-[#c7d5ff] cursor-pointer transition-colors duration-300 py-2 rounded-full"
                       onClick={toggleMenu}
                     >
-                      {t[lang].section1}
+                      Encoding Demo
                     </Link>
                   </li>
                   <li>
                     <Link
-                      href="#section2"
-                      className="block text-center hover:text-[#2a4785] cursor-pointer transition-colors duration-300 py-2"
+                      href="/rehydration-demo"
+                      className="block text-center hover:text-[#2a4785] hover:bg-[#edf2ff] hover:ring-1 hover:ring-[#c7d5ff] cursor-pointer transition-colors duration-300 py-2 rounded-full"
                       onClick={toggleMenu}
                     >
-                      {t[lang].section2}
+                      Rehydration Demo
                     </Link>
                   </li>
                   <li>
                     <Link
-                      href="#section3"
-                      className="block text-center hover:text-[#2a4785] cursor-pointer transition-colors duration-300 py-2"
+                      href="/developer-playground"
+                      className="block text-center hover:text-[#2a4785] hover:bg-[#edf2ff] hover:ring-1 hover:ring-[#c7d5ff] cursor-pointer transition-colors duration-300 py-2 rounded-full"
                       onClick={toggleMenu}
                     >
-                      {t[lang].section3}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="#section4"
-                      className="block text-center hover:text-[#2a4785] cursor-pointer transition-colors duration-300 py-2"
-                      onClick={toggleMenu}
-                    >
-                      {t[lang].section4}
+                      Developer Playground
                     </Link>
                   </li>
                 </ul>

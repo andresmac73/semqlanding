@@ -32,10 +32,10 @@ export default function RehydrationPreview() {
   };
 
   return (
-    <section id="rehydration-preview" className="py-20">
+    <section id="rehydration-demo" className="py-20">
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-          Rehydration Preview
+          Rehydration Demo
         </h2>
         <p className="text-center text-gray-500 mb-8 max-w-3xl mx-auto">
           SEMQ encodes embeddings as compact symbolic angular codes. This preview shows how a SEMQ
