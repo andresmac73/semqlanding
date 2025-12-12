@@ -129,7 +129,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center space-x-4 ml-6">
           {/* Instagram */}
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/mindustriestech"
             target="_blank"
             rel="noopener noreferrer"
             className="text-[#365aa6] hover:text-[#2a4785] transition-colors"
@@ -145,7 +145,7 @@ export default function Navbar() {
           </a>
           {/* LinkedIn */}
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/andresmacallister"
             target="_blank"
             rel="noopener noreferrer"
             className="text-[#365aa6] hover:text-[#2a4785] transition-colors"

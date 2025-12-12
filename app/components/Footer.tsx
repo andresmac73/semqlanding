@@ -104,7 +104,7 @@ const Footer = () => {
         {/* Social Icons */}
         <div className="flex items-center space-x-4">
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/mindustriestech"
             target="_blank"
             rel="noopener noreferrer"
             className="text-[#365aa6] hover:text-[#2a4785] transition-colors"
@@ -119,7 +119,7 @@ const Footer = () => {
             </svg>
           </a>
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/andresmacallister"
             target="_blank"
             rel="noopener noreferrer"
             className="text-[#365aa6] hover:text-[#2a4785] transition-colors"
