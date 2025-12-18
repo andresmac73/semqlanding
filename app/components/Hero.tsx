@@ -124,34 +124,28 @@ export default function Hero() {
           <p className="text-base md:text-lg lg:text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
             {subtitle}
           </p>
-          <div className="flex justify-center">
+          <div className="flex justify-center gap-3">
             <Link
               href="https://calendly.com/andresmacallister/30min"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block"
             >
-              <button 
-                className="px-8 py-4 font-bold text-white text-base md:text-lg transition-all duration-300 relative overflow-hidden"
-                style={{
-                  borderRadius: '9999px',
-                  background: 'linear-gradient(145deg, #6a90e7 0%, #5a80d7 20%, #4a70c7 40%, #365aa6 60%, #2a4785 80%, #1e3564 100%)',
-                  boxShadow: '0 4px 20px rgba(54, 90, 166, 0.5), inset 0 2px 5px rgba(255, 255, 255, 0.35), inset 0 -3px 8px rgba(0, 0, 0, 0.25)',
-                  border: '1px solid rgba(255, 255, 255, 0.15)',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.background = 'linear-gradient(145deg, #7aa0f7 0%, #6a90e7 20%, #5a80d7 40%, #4a70c7 60%, #365aa6 80%, #2a4785 100%)';
-                  e.currentTarget.style.boxShadow = '0 6px 30px rgba(54, 90, 166, 0.7), inset 0 3px 6px rgba(255, 255, 255, 0.45), inset 0 -3px 8px rgba(0, 0, 0, 0.25)';
-                  e.currentTarget.style.transform = 'translateY(-2px) scale(1.02)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.background = 'linear-gradient(145deg, #6a90e7 0%, #5a80d7 20%, #4a70c7 40%, #365aa6 60%, #2a4785 80%, #1e3564 100%)';
-                  e.currentTarget.style.boxShadow = '0 4px 20px rgba(54, 90, 166, 0.5), inset 0 2px 5px rgba(255, 255, 255, 0.35), inset 0 -3px 8px rgba(0, 0, 0, 0.25)';
-                  e.currentTarget.style.transform = 'translateY(0) scale(1)';
-                }}
-              >
+              <button className="btn btn-lg text-base md:text-lg bg-[#365aa6] text-white hover:bg-[#2a4785] shadow-md hover:shadow-lg">
                 <span style={{ position: 'relative', zIndex: 1, textShadow: '0 1px 2px rgba(0, 0, 0, 0.2)' }}>
-                  Get a Demo
+                  Explore the SDK
+                </span>
+              </button>
+            </Link>
+            <Link
+              href="https://drive.google.com" // TODO: replace with actual whitepaper link
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block"
+            >
+              <button className="btn btn-secondary btn-lg text-base md:text-lg">
+                <span style={{ position: 'relative', zIndex: 1 }}>
+                  Read the Whitepaper
                 </span>
               </button>
             </Link>
