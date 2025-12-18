@@ -6,15 +6,13 @@ import Link from "next/link";
 import Image from "next/image";
 
 const titles = {
-  es: "The Next Standard For AI Vector Compression",
-  en: "The Next Standard For AI Vector Compression",
-  pt: "The Next Standard For AI Vector Compression",
+  es: "Una capa de representación simbólica para embeddings",
+  en: "A Symbolic Representation Layer For Embeddings",
 };
 
 const subtitles = {
-  es: "Compress embeddings up to 6× while preserving semantic structure. Directional-preserving. Symbolic. Multimodal.",
-  en: "Compress embeddings up to 6× while preserving semantic structure. Directional-preserving. Symbolic. Multimodal.",
-  pt: "Compress embeddings up to 6× while preserving semantic structure. Directional-preserving. Symbolic. Multimodal.",
+  es: "Preservando la geometría semántica con representaciones direccionales y simbólicas.",
+  en: "Preserving semantic geometry through directional, symbolic representations.",
 };
 
 export default function Hero() {
